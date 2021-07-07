@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Skewed Button Effect</title>
+</head>
+
+<style type="text/css">
+    body{
+        height: 100vh;
+        /* background-color: #398f5b; */
+        /* background-color: #469d89; */
+        background-color: #2aad8c ;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-family: sans-serif;
+    }
+
+    a{
+        text-decoration: none;
+        color: #fff;
+        font-size: 28px;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 7px;
+
+        padding: 18px 30px;
+        position: relative;
+    }
+
+    a::before{
+        content: '';
+        width: 50%;
+        height: 100%;
+        background-color: tomato;
+
+        position: absolute;
+        top: -5px;
+        left: -1%;
+
+        transform: skew(30deg);
+
+        z-index: -1;
+
+        transition:all 0.3s;
+    }
+
+    a::after{
+        content: '';
+        width: 50%;
+        height: 100%;
+        background-color: darkcyan;
+
+        position: absolute;
+        top: 5px;
+        /* right: 0; */
+        /* right: -1%; */
+
+        left: 51%;
+
+        transform: skew(30deg);
+
+        z-index: -1;
+
+        transition:all 0.3s;
+    }
+
+    a:hover::before{
+        transform: skew(0deg);
+        top: 0;
+        left: 50%;
+        /* right: 0; */
+    }
+
+    a:hover::after{
+        transform: skew(0deg);
+        top:0;
+        left:0%;
+
+    }
+
+</style>
+
+<body>
+    <a href="#">Hover Me</a>
+</body>
+
+</html>
